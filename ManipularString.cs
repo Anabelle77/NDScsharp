@@ -17,7 +17,7 @@ namespace ManipularString
             Console.WriteLine(nome.Insert(7, "Ana"));
             Console.WriteLine(nome.Remove(9, 9));
             Console.WriteLine(nome.Contains("Rodrigues"));
-            Console.WriteLine(nome.Length);
+            Console.WriteLine(nome.Replace(" ", "").Length);
            
         }
     }
