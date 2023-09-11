@@ -9,7 +9,6 @@ namespace ManipularString
             Console.WriteLine("Qual o seu nome completo?:\n ");
             string nome = "Anabelle Rodrigues";
 
-
             Console.WriteLine(nome.Trim());
             Console.WriteLine(nome.Replace(" ", ""));
             Console.WriteLine(nome.ToLower());
