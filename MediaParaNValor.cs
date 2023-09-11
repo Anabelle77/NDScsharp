@@ -22,8 +22,8 @@ class Program
             
                 total += num;
                 cont++;
-
-            } while (num != 0);
+              while (num != 0);
+            } 
         }
     }
 }
