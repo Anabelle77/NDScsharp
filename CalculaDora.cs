@@ -18,35 +18,29 @@ namespace CalculaDora
 
             Console.WriteLine("Insira um número: ");
             double num1 = int.Parse(Console.ReadLine());
-
             Console.WriteLine("Insira outro número: ");
             double num2 = int.Parse(Console.ReadLine());
-
             
             if (escolha == 1)
             {
                 double op = (num1 + num2);
                 Console.WriteLine($"O resultado é: {op}");
             }
-            
             else if (escolha == 2)
             {
                 double op = (num1 - num2);
                 Console.WriteLine($"O resultado é: {op}");
             }
-            
             else if (escolha == 3)
             {
                 double op = (num1 * num2);
                 Console.WriteLine($"O resultado é: {op}");
             }
-            
             else if (escolha == 4)
             {
                 double op = (num1 / num2);
                 Console.WriteLine($"O resultado é: {op}");
             }
-
         }
     }
 }
