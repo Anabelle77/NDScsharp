@@ -8,10 +8,8 @@ namespace maioroumenor
         {
             Console.WriteLine("Informe o primeiro numero: ");
             double num1 = int.Parse(Console.ReadLine());
-
             Console.WriteLine("Informe o segundo numero: ");
             double num2 = int.Parse(Console.ReadLine());
-
             Console.WriteLine("Informe o terceiro numero: ");
             double num3 = int.Parse(Console.ReadLine());
 
