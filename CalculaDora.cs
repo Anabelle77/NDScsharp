@@ -1,12 +1,11 @@
 ﻿using System;
-
 namespace CalculaDora
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("BEM-VINDO À CalculaDora\\nQual operação deseja utilizar?:");
+            Console.WriteLine("BEM-VINDO À Calculadora\\nQual operação deseja utilizar?:");
             Console.WriteLine("1 - SOMA\n2 - SUBTRAÇÃO\n3 - MULTIPLICAÇÃO\n4 - DIVISÃO\n0 - sair");
             
             int escolha = int.Parse(Console.ReadLine());
