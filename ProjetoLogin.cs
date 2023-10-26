@@ -21,7 +21,7 @@ class Program
             Console.WriteLine("Se não possui uma conta, junte-se a nós agora mesmo:");
             Console.WriteLine("Digite (2) - Signup\n-----------------------------------------------------");
             Console.WriteLine("Se deseja sair da aplicação:");
-            Console.WriteLine("Digite (0) - Sair\n-----------------------------------------------------");
+            Console.WriteLine("Digite (0) - Sair\n");
         
             var choice = Console.ReadLine(); 
     
@@ -45,12 +45,13 @@ class Program
     }
     private static void Criarconta()
     {
+        Console.Clear();
         string? nome;
         string? senha;
 
         do
         {
-            Console.WriteLine("\nDigite o seu Nome:");
+            Console.WriteLine("Digite o seu Nome:");
             nome = Console.ReadLine();
         } while (string.IsNullOrEmpty(nome));
 
@@ -63,9 +64,11 @@ class Program
         _usuarios.Add(novouser);
         
         Console.WriteLine("\nSeu usuário foi cadastrado com sucesso!\n");
+        Thread.Sleep(4000);
     }
     private static void Logar()
     {
+        Console.Clear();
         Console.WriteLine("Digite o seu Nome:");
         var nome = Console.ReadLine();
         Console.WriteLine("Digite a sua Senha:");
@@ -76,10 +79,12 @@ class Program
         if (usuario != null)
         {
             Console.WriteLine($"\nSeja bem-vindo(a) novamente, {usuario.Nome}!\n");
+            Thread.Sleep(4000);
         }
         else
         {
             Console.WriteLine("\nLogin e/ou senha incorretos! Favor tente novamente...\n-----------------------------------------------------");
+            Thread.Sleep(4000);
         }
     }
 }
