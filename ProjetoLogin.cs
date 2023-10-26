@@ -4,15 +4,15 @@ class Program
 {
     class User
     {
-        public string Nome { get; set; }
-        public string Senha { get; set; }
+        public string Nome { get; set; } = null!;
+        public string Senha { get; set; } = null!;
     }
 
     private static List<User> _usuarios = new List<User>();
 
-    private static void Main(string[] args)
+    private static void Main()
     {
-        bool inicio = true;
+        var inicio = true;
         while (inicio)
         {
             Console.WriteLine("*===============* Página de Anabelle *===============*\n");
@@ -23,7 +23,7 @@ class Program
             Console.WriteLine("Se deseja sair da aplicação:");
             Console.WriteLine("Digite (0) - Sair\n-----------------------------------------------------");
         
-            string choice = Console.ReadLine(); 
+            var choice = Console.ReadLine(); 
     
             switch (choice)
             {
@@ -34,6 +34,7 @@ class Program
                     Criarconta();
                     break;
                 case "0":
+                    Console.WriteLine("Tchau, tchau :D");
                     inicio = false;
                     break;
                 default:
@@ -42,11 +43,10 @@ class Program
             }
         }
     }
-    
     private static void Criarconta()
     {
-        string nome;
-        string senha;
+        string? nome;
+        string? senha;
 
         do
         {
@@ -59,20 +59,19 @@ class Program
             Console.WriteLine("Digite a sua Senha:");
             senha = Console.ReadLine();
         } while (string.IsNullOrEmpty(senha));
-        User novouser = new User { Nome = nome, Senha = senha };
+        var novouser = new User { Nome = nome, Senha = senha };
         _usuarios.Add(novouser);
         
         Console.WriteLine("\nSeu usuário foi cadastrado com sucesso!\n");
     }
-
     private static void Logar()
     {
         Console.WriteLine("Digite o seu Nome:");
-        string nome = Console.ReadLine();
+        var nome = Console.ReadLine();
         Console.WriteLine("Digite a sua Senha:");
-        string senha = Console.ReadLine();
+        var senha = Console.ReadLine();
 
-        User usuario = _usuarios.Find(User => User.Nome == nome & User.Senha == senha);
+        var usuario = _usuarios.Find(user => user.Nome == nome & user.Senha == senha);
 
         if (usuario != null)
         {
