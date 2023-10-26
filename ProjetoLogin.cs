@@ -8,12 +8,12 @@ class Program
         public string Senha { get; set; }
     }
 
-    static List<User> usuarios = new List<User>();
+    private static List<User> _usuarios = new List<User>();
 
     private static void Main(string[] args)
     {
-        bool login = true;
-        while (login)
+        bool inicio = true;
+        while (inicio)
         {
             Console.WriteLine("*===============* Página de Anabelle *===============*\n");
             Console.WriteLine("Essa é a Página de Anabelle, caso já tenha uma conta:");
@@ -22,9 +22,9 @@ class Program
             Console.WriteLine("Digite (2) - Signup\n-----------------------------------------------------");
             Console.WriteLine("Se deseja sair da aplicação:");
             Console.WriteLine("Digite (0) - Sair\n-----------------------------------------------------");
-
-            string choice = Console.ReadLine();
-
+        
+            string choice = Console.ReadLine(); 
+    
             switch (choice)
             {
                 case "1":
@@ -34,7 +34,7 @@ class Program
                     Criarconta();
                     break;
                 case "0":
-                    login = false;
+                    inicio = false;
                     break;
                 default:
                     Console.WriteLine("\nOpção inválida! Favor tente novamente...\n");
@@ -45,25 +45,34 @@ class Program
     
     private static void Criarconta()
     {
-        Console.WriteLine("\nDigite o seu Nome:");
-        string nome = Console.ReadLine();
-        Console.WriteLine("Digite a sua Senha:");
-        string senha = Console.ReadLine();
-        
+        string nome;
+        string senha;
+
+        do
+        {
+            Console.WriteLine("\nDigite o seu Nome:");
+            nome = Console.ReadLine();
+        } while (string.IsNullOrEmpty(nome));
+
+        do
+        {
+            Console.WriteLine("Digite a sua Senha:");
+            senha = Console.ReadLine();
+        } while (string.IsNullOrEmpty(senha));
         User novouser = new User { Nome = nome, Senha = senha };
-        usuarios.Add(novouser);
-     
+        _usuarios.Add(novouser);
+        
         Console.WriteLine("\nSeu usuário foi cadastrado com sucesso!\n");
     }
-    
+
     private static void Logar()
     {
-        Console.WriteLine("\nDigite o seu Nome:");
+        Console.WriteLine("Digite o seu Nome:");
         string nome = Console.ReadLine();
         Console.WriteLine("Digite a sua Senha:");
         string senha = Console.ReadLine();
 
-        User usuario = usuarios.Find(u => u.Nome == nome && u.Senha == senha);
+        User usuario = _usuarios.Find(User => User.Nome == nome & User.Senha == senha);
 
         if (usuario != null)
         {
@@ -71,7 +80,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Login e/ou senha incorretos! Favor tente novamente...\n-----------------------------------------------------");
+            Console.WriteLine("\nLogin e/ou senha incorretos! Favor tente novamente...\n-----------------------------------------------------");
         }
     }
 }
