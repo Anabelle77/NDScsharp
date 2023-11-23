@@ -10,16 +10,16 @@ namespace aplicativ
 
             if (input != null)
             {
-                if (int.TryParse(input, out int tamanho))
+                if (int.TryParse(input, out var tamanho))
                 {
                     Console.Write("#");
-                    for(int l = 0; l < tamanho; l++)
+                    for(var l = 0; l < tamanho; l++)
                     {
                         Console.Write("#");
                     }
                     
                     Console.WriteLine("#");
-                    for(int l = 0; l < tamanho; l++)
+                    for(var l = 0; l < tamanho; l++)
                     {
                         Console.Write("#");
                         for(int c = 0; c < tamanho; c++)
@@ -30,7 +30,7 @@ namespace aplicativ
                     }
                     
                     Console.Write("#");
-                    for (int l = 0; l < tamanho; l++)
+                    for (var l = 0; l < tamanho; l++)
                     {
                         Console.Write("#");
                     }
