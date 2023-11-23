@@ -1,12 +1,12 @@
-namespace tabuleiro
+namespace aplicativ
 { 
     public class Program
     {
         public static void Main()
         {
             Console.Clear();
-            Console.WriteLine("Quantas linhas e colunas no tabuleiro?: ");
-            string input = Console.ReadLine();
+            Console.WriteLine("Qual tamanho das linhas e colunas do tabuleiro?: ");
+            var input = Console.ReadLine();
 
             if (input != null)
             {
