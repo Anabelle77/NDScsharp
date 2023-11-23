@@ -1,38 +1,50 @@
-﻿using System;
-namespace Tabuleiro
-{
-    class Program
+namespace tabuleiro
+{ 
+    public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Quantas linhas no tabuleiro?: ");
-            int linhas = int.Parse(Console.ReadLine());
-            
-            Console.WriteLine("Quantas colunas no tabuleiro?: ");
-            int colunas = int.Parse(Console.ReadLine());
-            
-            Console.Write("#");
-            for(int l = 0; l < linhas; l++)
-            {
-                Console.Write("#");
-            }
-            Console.WriteLine("#");
+            Console.Clear();
+            Console.WriteLine("Quantas linhas e colunas no tabuleiro?: ");
+            string input = Console.ReadLine();
 
-            for(int l = 0; l < linhas; l++)
+            if (input != null)
             {
-                Console.Write("#");
-                for(int c = 0; c < colunas; c++)
+                if (int.TryParse(input, out int tamanho))
                 {
-                    Console.Write(" ");
+                    Console.Write("#");
+                    for(int l = 0; l < tamanho; l++)
+                    {
+                        Console.Write("#");
+                    }
+                    
+                    Console.WriteLine("#");
+                    for(int l = 0; l < tamanho; l++)
+                    {
+                        Console.Write("#");
+                        for(int c = 0; c < tamanho; c++)
+                        {
+                            Console.Write(" ");
+                        }
+                        Console.WriteLine("#");
+                    }
+                    
+                    Console.Write("#");
+                    for (int l = 0; l < tamanho; l++)
+                    {
+                        Console.Write("#");
+                    }
+                    Console.Write("#");
                 }
-                Console.WriteLine("#");
+                else
+                {
+                    Main();
+                }
             }
-            Console.Write("#");
-            for (int l = 0; l < linhas; l++)
+            else
             {
-                Console.Write("#");
+                Main();
             }
-            Console.Write("#");
         }
     }
-}  
+}
