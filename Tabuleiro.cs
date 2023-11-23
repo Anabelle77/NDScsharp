@@ -22,7 +22,7 @@ namespace aplicativ
                     for(var l = 0; l < tamanho; l++)
                     {
                         Console.Write("#");
-                        for(int c = 0; c < tamanho; c++)
+                        for(var c = 0; c < tamanho; c++)
                         {
                             Console.Write(" ");
                         }
