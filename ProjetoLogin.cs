@@ -1,4 +1,4 @@
-namespace projetologin;
+namespace ProjLogin;
 
 class Program
 {
@@ -51,20 +51,32 @@ class Program
 
         do
         {
+            Console.Clear();
             Console.WriteLine("Digite o seu Nome:");
             nome = Console.ReadLine();
-        } while (string.IsNullOrEmpty(nome));
+            
+            if (UserExistente(nome))
+            {
+                Console.WriteLine("\nUsuário com esse nome já existe. Escolha outro nome.\n");
+                Thread.Sleep(2000);
+            }
+        } while (string.IsNullOrEmpty(nome) | UserExistente(nome));
 
         do
         {
             Console.WriteLine("Digite a sua Senha:");
             senha = Console.ReadLine();
         } while (string.IsNullOrEmpty(senha));
+        
         var novouser = new User { Nome = nome, Senha = senha };
         _usuarios.Add(novouser);
         
         Console.WriteLine("\nSeu usuário foi cadastrado com sucesso!\n");
         Thread.Sleep(4000);
+    }
+    private static bool UserExistente(string nome)
+    {
+        return _usuarios.Any(u => u.Nome == nome);
     }
     private static void Logar()
     {
