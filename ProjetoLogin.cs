@@ -55,18 +55,20 @@ class Program
             Console.WriteLine("Digite o seu Nome:");
             nome = Console.ReadLine();
             
-            if (UserExistente(nome))
+            if (!string.IsNullOrEmpty(nome) && UserExistente(nome))
             {
-                Console.WriteLine("\nUsuário com esse nome já existe. Escolha outro nome.\n");
+                Console.WriteLine("\nNome de usuário já está em uso, escolha outro nome.\n");
                 Thread.Sleep(2000);
             }
-        } while (string.IsNullOrEmpty(nome) | UserExistente(nome));
-
+        } 
+        while (string.IsNullOrEmpty(nome) || UserExistente(nome));
+        
         do
         {
             Console.WriteLine("Digite a sua Senha:");
             senha = Console.ReadLine();
-        } while (string.IsNullOrEmpty(senha));
+        } 
+        while (string.IsNullOrEmpty(senha));
         
         var novouser = new User { Nome = nome, Senha = senha };
         _usuarios.Add(novouser);
@@ -76,7 +78,7 @@ class Program
     }
     private static bool UserExistente(string nome)
     {
-        return _usuarios.Any(u => u.Nome == nome);
+        return _usuarios.Any(u => u.Nome == nome.ToLower());
     }
     private static void Logar()
     {
