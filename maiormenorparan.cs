@@ -1,32 +1,31 @@
 namespace maiormenorparan
-{
-    class Program
+    
+static void Main()
     {
-        private static void Main(string[] args)
+        Console.WriteLine("Digite números (digite 0 para encerrar):");
+        int numero;
+        int menor = int.MaxValue;
+        int maior = int.MinValue;
+
+        do
         {
-            int numero = 0;
-            var maior = 0;
-            var menor = 10000;
-
-            do
+            numero = int.Parse(Console.ReadLine());
+            if (numero != 0)
             {
-                Console.WriteLine("Informe um numero (ou 0 para sair): ");
-                numero = int.Parse(Console.ReadLine());
-
-                if (numero == 0)
-                {
-                    Console.WriteLine($"O maior valor é {maior}");
-                    Console.WriteLine($"O menor valor é {menor}");
-                }
-                else if (numero > maior)
-                {
-                    maior = numero;
-                }
-                else if (numero < menor)
+                if (numero < menor)
                 {
                     menor = numero;
                 }
-            } while (numero != 0);
-        }
+                
+                if (numero > maior)
+                {
+                    maior = numero;
+                }
+            }
+        } 
+        while (numero != 0);
+        
+        Console.WriteLine($"Menor valor: {menor}");
+        Console.WriteLine($"Maior valor: {maior}");
     }
 }     
