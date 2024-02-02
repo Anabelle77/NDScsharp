@@ -1,4 +1,4 @@
-namespace aplicativo
+namespace aplicativo;
 public class Program
 {
     public static void Main()
