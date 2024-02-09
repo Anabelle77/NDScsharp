@@ -1,4 +1,4 @@
-namespace maiormenorparan
+namespace maiormenorparan;
     
 class Program
 {
