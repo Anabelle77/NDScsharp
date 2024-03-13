@@ -72,9 +72,9 @@ class SysCaixaEletronico
         
         var novouser = new User
         {
-            Nome = nome, 
-            Senha = senha, 
-            Saldo = saldo
+            Nome = nome;
+            Senha = senha;
+            Saldo = saldo;
         };
         
         _usuarioslista.Add(novouser);
