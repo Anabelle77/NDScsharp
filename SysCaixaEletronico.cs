@@ -28,11 +28,11 @@ class SysCaixaEletronico
     
             switch (choice)
             {
-                case "0":
+                case 0:
                     Console.WriteLine("Tchau, tchau :D");
                     inicio = false;
                     break;
-                case "1":
+                case 1:
                 {
                     if (_usuarioslista.Count == 0)
                     {
@@ -42,7 +42,7 @@ class SysCaixaEletronico
                 }
                     AcessarCaixa();
                     break;
-                case "2":
+                case 2:
                     Criaruser();
                     break;
                 default:
